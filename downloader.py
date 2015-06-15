@@ -22,7 +22,6 @@ def download(url, filename):
             break
         file_size_dl += len(buffer)
         f.write(buffer)
-        status = r"%15d [%3.1f%%]" % (file_size_dl, file_size_dl * 100 / filesize)
-        print status,
-        print "\r",
+        status = r"   ===  [ Downloaded: %15d ] [%3.1f%%] [ File Size: %15d ]  ===   " % (file_size_dl, file_size_dl * 100 / filesize, filesize)
+        print status + "\r",
     f.close()
